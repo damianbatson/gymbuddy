@@ -15,11 +15,13 @@ class HomeController extends BaseController {
 	|
 	*/
 
-	public function showWelcome()
+	public function index()
 	{
-		$laravelprojects = Projects::orderBy('id', 'DESC')->paginate(8);
+		$projects = Projects::all();
 
-	return View::make('site/index')->with('laravelprojects', $laravelprojects);
+		return View::make('site.index')->with('projects', $projects);
 	}
+
+
 
 }

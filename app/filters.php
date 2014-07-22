@@ -35,8 +35,12 @@ App::after(function($request, $response)
 
 Route::filter('auth', function()
 {
-	if (Auth::guest()) return Redirect::guest('login');
+	if (Auth::guest()) return Redirect::guest('auth/login');
 });
+
+// Route::filter('auth.sentry', function(){
+	
+// });
 
 
 Route::filter('auth.basic', function()

@@ -11,9 +11,9 @@ class ProjectImages extends Eloquent implements UserInterface, RemindableInterfa
 	 * @var string
 	 */
 	protected $table = 'project_images';
-	//protected $primarykey = 'name';
 	
-	public function getImages(){
+	public function getImages()
+	{
 		
 		return $this->belongsTo('Projects');
 	}
@@ -56,18 +56,18 @@ class ProjectImages extends Eloquent implements UserInterface, RemindableInterfa
 	}
 
 	public function getRememberToken()
-{
-    return $this->remember_token;
-}
+	{
+	    return $this->remember_token;
+	}
 
-public function setRememberToken($value)
-{
-    $this->remember_token = $value;
-}
+	public function setRememberToken($value)
+	{
+	    $this->remember_token = $value;
+	}
 
-public function getRememberTokenName()
-{
-    return 'remember_token';
-}
+	public function getRememberTokenName()
+	{
+	    return 'remember_token';
+	}
 
 }

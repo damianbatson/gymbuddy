@@ -10,7 +10,20 @@ class Projects extends Eloquent implements UserInterface, RemindableInterface {
 	 *
 	 * @var string
 	 */
-	protected $table = 'laravelprojects';
+	protected $table = 'projects';
+
+	protected $fillable = array('name', 'description');
+
+	public static $rules = array(
+		'name' => 'required| unique:projects',
+		'description' => 'required',
+		// 'image' => 'required|image|mimes:jpg,jpeg|max:3072'
+		);
+
+	public function user()
+	{
+		return $this->belongsTo('User');
+	}
 
 
 	/**
@@ -51,18 +64,18 @@ class Projects extends Eloquent implements UserInterface, RemindableInterface {
 	}
 
 	public function getRememberToken()
-{
-    return $this->remember_token;
-}
+	{
+	    return $this->remember_token;
+	}
 
-public function setRememberToken($value)
-{
-    $this->remember_token = $value;
-}
+	public function setRememberToken($value)
+	{
+	    $this->remember_token = $value;
+	}
 
-public function getRememberTokenName()
-{
-    return 'remember_token';
-}
+	public function getRememberTokenName()
+	{
+	    return 'remember_token';
+	}
 
 }

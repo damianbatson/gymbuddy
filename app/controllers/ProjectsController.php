@@ -1,34 +1,63 @@
 <?php
 
-class ProjectsController extends BaseController {
+class ProjectsController extends AdminController {
 
-	/*
-	|--------------------------------------------------------------------------
-	| Default Home Controller
-	|--------------------------------------------------------------------------
-	|
-	| You may wish to use controllers instead of, or in addition to, Closure
-	| based routes. That's great! Here is an example controller method to
-	| get you started. To route to this controller, just add the route:
-	|
-	|	Route::get('/', 'HomeController@showWelcome');
-	|
-	*/
-
-	public function showData()
+	/**
+	 * Send back all comments as JSON
+	 *
+	 * @return Response
+	 */
+	public function index()
 	{
-		//return View::make('projects');
-		$laravelprojects = Projects::all();
-		
-		return View::make('projects/projects', compact('laravelprojects'));
+        $projects = Projects::whereHas('user', function($query)
+        {
+            $query->where( 'user_id', '=', Auth::user()->id );
+        })->get();
+
+        return View::make('projects.index')->with('projects', $projects);
+        // return View::make('portfolios/index', compact('laravelprojects'));
 	}
-	
-	public function showDataId($id)
+
+	/**
+	 * Store a newly created resource in storage.
+	 *
+	 * @return Response
+	 */
+	public function store()
 	{
-		
-		$project_images = ProjectImages::with('getImages')->find($id);
-		
-		return View::make('projects/project_id', compact('project_images'));
+		Projects::create(array(
+			'author' => Input::get('author'),
+			'text' => Input::get('text')
+		));
+
+		return Response::json(array('success' => true));
+	}
+
+	/**
+	 * Return the specified resource using JSON
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function show($id)
+	{
+		$project_images = Projects::find($id);
+
+        return View::make('projects.project_id')->with('project_images', $project_images);
+        // return View::make('portfolios.show', compact('laravelproject'));
+	}
+
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function destroy($id)
+	{
+		Projects::destroy($id);
+
+		return Response::json(array('success' => true));
 	}
 
 }

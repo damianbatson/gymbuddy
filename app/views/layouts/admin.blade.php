@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Tutsbyus</title>
+    <title></title>
 
     <!-- Bootstrap core CSS -->
     {{ HTML::style('//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css') }}
@@ -21,7 +21,6 @@
 
     <nav class="navbar navbar-inverse" role="navigation">
       <div class="container">
-      <div class="row">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
             <span class="sr-only">Toggle navigation</span>
@@ -29,17 +28,16 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          {{ HTML::link('/', 'Tutorial', array('class' => 'navbar-brand')) }}
+          {{ HTML::link('/', 'Gym Buddy', array('class' => 'navbar-brand')) }}
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav">
-            <li>{{ HTML::link('portfolios/index', 'Projects') }}</li>
+            <li>{{ link_to_route('portfolios.index', 'Projects') }}</li>
             <li>{{ HTML::link('logout', 'Logout') }}</li>
           </ul>
         </div><!-- /.navbar-collapse -->
-        </div>
       </div><!-- /.container -->
     </nav>
 

@@ -4,7 +4,7 @@
 
         <div class="col-md-4">
           <div class="panel panel-info">
-            <div class="panel-heading">Please Register</div>
+            <div class="panel-heading">Please Login</div>
             <div class="panel-body">
 				{{ Form::open(array('url' => 'auth/login')) }}
 				@if($errors->any())
