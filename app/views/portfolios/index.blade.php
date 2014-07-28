@@ -2,12 +2,13 @@
 
 @section('content')
 
-<div class="col-md-12">
-    {{ link_to_route('portfolios.create', 'Create a new post', null, array('class' => 'btn btn-primary')) }}
-</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
 @if($projects->count())
-<h4>These are your current posts</h4>
-    <div class="col-md-12">
+
+    <div class="col-md-8">
+    
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
@@ -25,7 +26,7 @@
                 <tr>
                     <td>{{ $project->name }}</td>
                     <td>{{ $project->user->username}}</td>
-                    <td>{{ $project->id }}</td>
+                    <td>{{ $project->created_at }}</td>
                     <td>{{ substr($project->description, 0, 120). '[...]'}}</td>
                     <td>{{ link_to_route('portfolios.show', 'Preview', array($project->id), array('class' => 'btn btn-success')) }}</td>
                     <td>{{ link_to_route('portfolios.edit', 'Edit', array($project->id), array('class' => 'btn btn-info')) }}</td>
@@ -44,7 +45,26 @@
     @else
     <div class="alert alsert-info col-md-4" style="margin-top: 15px">You currently have no posts</div>
     @endif
+<div class="col-md-4">
+    <div class="well">
+    {{ HTML::linkRoute('portfolios.create', 'Create a new post', null, array('class' => 'btn btn-primary')) }}
+    <h4 class="projectHyperLink">These are your current posts</h4>
+    </div>
+</div>
 
+        </div>
+    </div>
 
+    <hr>
+
+    <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; Company 2013 &middot; Facebook &middot; Twitter &middot; Google+</p>
+            </div>
+        </div>
+    </footer>
+
+</div><!-- /.container -->
 
 @stop

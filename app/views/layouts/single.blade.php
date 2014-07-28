@@ -33,7 +33,7 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
-          <ul class="nav navbar-nav">
+          <ul class="nav navbar-nav navbar-right">
             <li>{{ HTML::link('auth/login', 'Login') }}</li>
             <li>{{ HTML::link('/', 'Logout') }}</li>
           </ul>
@@ -41,23 +41,11 @@
       </div><!-- /.container -->
     </nav>
 
-    <div class="container">
-    <div class="row">
-        <div class="col-lg-12">
+    
         @yield('content')
-        </div>
-        </div>
-      <hr>
-      
-      <footer>
-        <div class="row">
-          <div class="col-lg-12">
-            <p>Copyright &copy; Company 2013 &middot; Facebook &middot; Twitter &middot; Google+</p>
-          </div>
-        </div>
-      </footer>
 
-    </div><!-- /.container -->
+      
+
 
     <!-- Bootstrap core JavaScript -->
     <!-- Placed at the end of the document so the pages load faster -->

@@ -1,6 +1,7 @@
 
 @import url(//fonts.googleapis.com/css?family=Lato:300,400,700);
 @import url(//fonts.googleapis.com/css?family=Metrophobic:300,400,700);
+@import url(//fonts.googleapis.com/css?family=Oxygen:300,400,700);
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -19,8 +20,8 @@ time, mark, audio, video {
     padding: 0;
     border: 0;
     outline:0;
-    font-size: 100%;
-    font: inherit;
+    /*font-size: 100%;*/
+    /*font: inherit;*/
     vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -134,14 +135,6 @@ table {
 #columnOne .hyperLink img{
     float:left;
     vertical-align:text-bottom;
-}
-
-#columnOne .hyperLink #hyperLinkText {
-    display: block;
-    font-family: 'Oxygen', sans-serif;
-    color:#369;
-    font-size:18px;
-    float:left;
 }
 
 #columnTwo {
@@ -258,16 +251,19 @@ table {
     padding-bottom:10px;
 }
 
-#logo {
-
-    color: #336699;
+.gblogo {
     display: block;
     float:left;
-    position:relative;
-    padding:6px;
+    color: #FFF;
+    font-family: 'Oxygen', sans-serif;
+    font-size:26px;
+    text-decoration: none;
+    padding-left:10px;
+    padding-top:10px;
+    padding-bottom:10px;
 }
 
-#logo img{
+#logo img {
     width: 60px;
     position:relative;
     display:block;
@@ -449,28 +445,54 @@ table {
     margin-bottom:18px;
 }
 
-.projectImg img{
-    width: 508px;
-    display:block;
-    float:left;
+.projectTitle {
+    display: block;
+    font-family: 'Oxygen', sans-serif;
+    color:#F60;
+    font-size:44px;
+    /*margin-bottom:20px;*/
 }
 
-#projectInfo {
-    width: 460px;
-    position: relative;
-    color: #FFF;
-    padding: 8px;
-    z-index: 10;
-    float:left;
-    display:block;
+.dashboardTitle {
+    display: block;
+    font-family: 'Oxygen', sans-serif;
+    color:#F60;
+    font-size:24px;
+    /*margin-bottom:20px;*/
 }
 
-#projectInfo #hyperLink {
+.dashboardText {
+    display: block;
+    color: #CCCCCC;
+    font-family: 'Metrophobic', sans-serif;
+    font-size:14px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding-bottom:10px;
+}
+
+.projectName {
+    display: block;
+    font-family: 'Metrophobic', sans-serif;
+    color:#369;
+    font-size:14px;
+    line-height:1.3em;
+}
+
+.projectHyperLink {
     display: block;
     font-family: 'Oxygen', sans-serif;
     color:#369;
     font-size:12px;
     margin-top:20px;
+}
+
+.hyperLinkText {
+    display: block;
+    font-family: 'Oxygen', sans-serif;
+    color:#369;
+    font-size:18px;
+    float:left;
 }
 
 #projectInfo #project-title {
@@ -673,7 +695,7 @@ table {
 }
 
 
-#columnOne .hide {
+/*#columnOne .hide {
    display: none;
 }
 
@@ -743,4 +765,4 @@ fieldset {
     float:left;
     width:50%;
 
-}
+}*/

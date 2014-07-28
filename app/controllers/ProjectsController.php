@@ -41,7 +41,7 @@ class ProjectsController extends AdminController {
 	 */
 	public function show($id)
 	{
-		$project_images = Projects::find($id);
+		$project_images = ProjectImages::find($id);
 
         return View::make('projects.project_id')->with('project_images', $project_images);
         // return View::make('portfolios.show', compact('laravelproject'));

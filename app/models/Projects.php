@@ -12,12 +12,15 @@ class Projects extends Eloquent implements UserInterface, RemindableInterface {
 	 */
 	protected $table = 'projects';
 
-	protected $fillable = array('name', 'description');
+	protected $fillable = array('name', 'description', 'exercise01', 'exercise01_weight', 'exercise01_reps');
 
 	public static $rules = array(
-		'name' => 'required| unique:projects',
+		'name' => 'required',
 		'description' => 'required',
 		// 'image' => 'required|image|mimes:jpg,jpeg|max:3072'
+		'exercise01'=> 'required',
+		'exercise01_weight'=> 'required',
+		'exercise01_reps'=> 'required'
 		);
 
 	public function user()

@@ -44,6 +44,10 @@ class PortfoliosController extends AdminController {
             $project = new Projects;
             $project->name = Input::get('name');
             $project->description = Input::get('description');
+            $project->exercise01 = Input::get('exercise01');
+            $project->exercise01_weight = Input::get('exercise01_weight');
+            $project->exercise01_reps = Input::get('exercise01_reps');
+
             
             $destinationPath    = 'images/'; // The destination were you store the image.
             $filename           = $file->getClientOriginalName(); // Original file name that the end user used for it.
@@ -57,7 +61,7 @@ class PortfoliosController extends AdminController {
             return Redirect::route('portfolios.index');
         }
 
-        return Redirect::back()->withErrors($v);
+        return Redirect::back()->withInput()->withErrors($v);
     }
 
     /**
