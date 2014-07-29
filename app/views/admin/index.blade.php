@@ -14,7 +14,7 @@
 						<h2 class="dashboardText">Hello {{ ucwords(Auth::user()->username) }}</h2>
 						<h2 class="dashboardText"> {{ ucwords(Auth::user()->email) }}</h2>
 						{{ HTML::link('logout', 'Logout', array('class' => 'btn btn-success')) }}
-						{{}}
+						{{ HTML::link('portfolio.index', 'Projects', array('class'=>'btn btn-info'))}}
 
 						</div>
 
