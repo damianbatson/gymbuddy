@@ -53,7 +53,7 @@ class PortfoliosController extends AdminController {
             $filename           = $file->getClientOriginalName(); // Original file name that the end user used for it.
             $mime_type          = $file->getMimeType(); // Gets this example image/png
             $extension          = $file->getClientOriginalExtension(); // The original extension that the user used example .jpg or .png.
-            $upload_success     = $file->move($destinationPath, $filename); // Now we move the file to its new home.
+            $upload_success     = $file->move('images/', $filename); // Now we move the file to its new home.
             $project->image = 'images/'.$filename;
             $project->user_id = Auth::user()->id;
             $project->save();
@@ -73,8 +73,10 @@ class PortfoliosController extends AdminController {
     public function show($id)
     {
         $project = Projects::find($id);
+        // $projectimages = Projects::find($id)->projectimages;
 
         return View::make('portfolios.show')->with('project', $project);
+        // return View::make('portfolios.show')->with('project_images', $project_images);
         // return View::make('portfolios.show', compact('laravelproject'));
     }
 

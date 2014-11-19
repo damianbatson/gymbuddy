@@ -5,22 +5,25 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
-            <div class="col-md-4">
+            
                 <!-- <a href="http://laravel.com" title="Laravel PHP Framework"></a> -->
                 <h2 class="projectTitle">Portfolio</h2>
 
                 @foreach ($projects as $project)
-                	<!-- <div class="col-sm-6"> -->
-                	<h2 class="projectTitle">{{ $project->id }}</h2>
-                    <h2>{{ $project->name }}</h2>
-                    <img class="img-responsive" src="{{ $project->image }}">
+                	<div class="col-sm-6">
+                    <div class="col-md-8">
+                	<h3 class="projectTitle">{{ $project->name }}</h3>
+                    <h5>{{ $project->id }}</h5>
+                    
                     <p>{{ $project->description }}</p>
                     <p>{{ HTML::link('projects/'.$project->id, 'link to project') }}</p>
-
-                    <!-- </div> -->
+                    </div>
+                    <div class="col-md-4"><img class="img-responsive" src="{{ $project->image }}"></div>
+                    <hr>
+                    </div>
                 @endforeach
 
-            </div>
+            
         </div>
     </div>
 

@@ -12,11 +12,7 @@ class ProjectImages extends Eloquent implements UserInterface, RemindableInterfa
 	 */
 	protected $table = 'project_images';
 	
-	public function getImages()
-	{
-		
-		return $this->belongsTo('Projects');
-	}
+	
 
 	/**
 	 * The attributes excluded from the model's JSON form.

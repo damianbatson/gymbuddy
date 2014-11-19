@@ -5,6 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
+        <div class="col-md-6">
     {{ Form::open(array('route' => 'portfolios.store', 'files'=> true)) }}
     @if($errors->any())
         <div class="alert alert-danger">
@@ -45,6 +46,7 @@
     {{ link_to_route('portfolios.index', 'Cancel', null, array('class' => 'btn btn-warning'))}}
     {{ Form::close() }}
 
+        </div>
         </div>
     </div>
 

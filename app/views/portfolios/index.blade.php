@@ -47,7 +47,7 @@
     @endif
 <div class="col-md-4">
     <div class="well">
-    {{ HTML::linkRoute('portfolios.create', 'Create a new post', null, array('class' => 'btn btn-primary')) }}
+    {{ link_to_route('portfolios.create', 'Create a new post', null, array('class' => 'btn btn-primary')) }}
     <h4 class="projectHyperLink">These are your current posts</h4>
     </div>
 </div>

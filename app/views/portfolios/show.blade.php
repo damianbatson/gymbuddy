@@ -7,11 +7,11 @@
         <div class="col-lg-12">
 <div class="col-lg-8">
 	<hr>
-	<h1 class="projectName">{{ $project->name }}</h1>
+	<h1>{{ $project->name }}</h1>
 	<!-- <p class="lead"></p> -->
 	<h2 class="projectName">{{ ucwords($project->user->username) }}</h2>
 	<hr>
-	<p><span class="glyphicon glyphicon-time">{{ ucwords($project->updated_at) }}</span></p>
+	<h3><i class="glyphicon glyphicon-time">{{ ucwords($project->created_at) }}</i></h3>
 	<hr>
 	<p class="lead">{{ $project->description }}</p>
 	<p class="lead">{{ $project->exercise01 }}</p>
@@ -19,6 +19,23 @@
 	<p class="lead">{{ $project->exercise01_reps }}</p>
 
 	<img class="img-responsive" src="../{{ $project->image }}">
+	
+                @foreach ($project->projectimages as $projectimage)
+                	<div class="col-md-6">
+                    
+                	<h4>{{ $projectimage->id }}</h4>
+                    <h4>{{ $projectimage->name }}</h4>
+                    
+                    <p>{{ $projectimage->link }}</p>
+                    
+                    </div>
+                    <div class="col-sm-4">
+                    <img class="img-responsive" src="../{{ $projectimage->image1 }}">
+                    <img class="img-responsive" src="../{{ $projectimage->image2 }}">
+                    <img class="img-responsive" src="../{{ $projectimage->image3 }}">
+                    </div>
+                @endforeach
+                
 </div>
 
 <div class="col-lg-4">

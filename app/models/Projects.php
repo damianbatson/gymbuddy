@@ -17,7 +17,7 @@ class Projects extends Eloquent implements UserInterface, RemindableInterface {
 	public static $rules = array(
 		'name' => 'required',
 		'description' => 'required',
-		// 'image' => 'required|image|mimes:jpg,jpeg|max:3072'
+		'image' => 'required:sometimes|image|mimes:jpg,jpeg|max:3072',
 		'exercise01'=> 'required',
 		'exercise01_weight'=> 'required',
 		'exercise01_reps'=> 'required'
@@ -26,6 +26,11 @@ class Projects extends Eloquent implements UserInterface, RemindableInterface {
 	public function user()
 	{
 		return $this->belongsTo('User');
+	}
+
+	public function projectimages()
+	{
+		return $this->hasMany('ProjectImages', 'id');
 	}
 
 

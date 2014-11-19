@@ -5,6 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
+        <div class="col-md-6">
     {{ Form::model($project, array('method' => 'PATCH', 'route' => array('portfolios.update', $project->id), 'files'=>true)) }}
     @if($errors->any())
         <div class="alert alert-danger">
@@ -44,8 +45,9 @@
     <br>
     {{ Form::submit('Update', array('class' => 'btn btn-success')) }}
     {{ link_to_route('portfolios.index', 'Cancel', null, array('class' => 'btn btn-warning')) }}
-    {{Form::close() }}
+    {{ Form::close() }}
 
+        </div>
         </div>
     </div>
 
