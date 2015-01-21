@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
-<div class="col-lg-8">
+<div class="col-md-7 col-lg-8">
 	<hr>
 	<h1>{{ $project->name }}</h1>
 	<!-- <p class="lead"></p> -->
@@ -20,25 +20,27 @@
 
 	<img class="img-responsive" src="../{{ $project->image }}">
 	
-                @foreach ($project->projectimages as $projectimage)
-                	<div class="col-md-6">
-                    
-                	<h4>{{ $projectimage->id }}</h4>
-                    <h4>{{ $projectimage->name }}</h4>
-                    
-                    <p>{{ $projectimage->link }}</p>
-                    
-                    </div>
-                    <div class="col-sm-4">
-                    <img class="img-responsive" src="../{{ $projectimage->image1 }}">
-                    <img class="img-responsive" src="../{{ $projectimage->image2 }}">
-                    <img class="img-responsive" src="../{{ $projectimage->image3 }}">
-                    </div>
-                @endforeach
+
+        @foreach ($project->projectimages as $projectimage)
+            <!-- <div class="col-sm-6"> -->
+            
+            <h4>{{ $projectimage->id }}</h4>
+            <h4>{{ $projectimage->name }}</h4>
+            
+            <p><a href="{{ $projectimage->link }}">link</a></p>
+            
+            <!-- </div> -->
+            <!-- <div class="col-sm-6"> -->
+            <img class="img-responsive" src="../{{ $projectimage->image1 }}">
+            <img class="img-responsive" src="../{{ $projectimage->image2 }}">
+            <img class="img-responsive" src="../{{ $projectimage->image3 }}">
+            <!-- </div> -->
+        @endforeach
                 
 </div>
 
-<div class="col-lg-4">
+<div class="col-md-5 col-lg-4">
+
 	<div class="well">
 		<legend>What would you like to do next?</legend>
 		{{ link_to_route('portfolios.edit', 'Update', array($project->id), array('class' => 'btn btn-primary')) }}

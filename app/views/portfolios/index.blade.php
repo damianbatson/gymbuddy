@@ -9,7 +9,7 @@
 
     <div class="col-md-8">
     
-        <table class="table table-bordered table-striped">
+<!--         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
                     <th>Title</th>
@@ -21,29 +21,32 @@
                     <th>Delete</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody> -->
                 @foreach($projects as $project)
-                <tr>
-                    <td>{{ $project->name }}</td>
-                    <td>{{ $project->user->username}}</td>
-                    <td>{{ $project->created_at }}</td>
-                    <td>{{ substr($project->description, 0, 120). '[...]'}}</td>
-                    <td>{{ link_to_route('portfolios.show', 'Preview', array($project->id), array('class' => 'btn btn-success')) }}</td>
-                    <td>{{ link_to_route('portfolios.edit', 'Edit', array($project->id), array('class' => 'btn btn-info')) }}</td>
-                    <td>
+                <!-- <tr> -->
+                <div class="col-sm-12 col-md-12 col-lg-6 nopadding">
+                <div class="col-sm-12 col-md-8 nopadding">
+                    <h3>{{ $project->name }}</h3>
+                    <h4>{{ $project->user->username}}</h4>
+                    <h5>{{ $project->created_at }}</h5>
+                    <p>{{ substr($project->description, 0, 120). '[...]'}}</p>
+                    <p>{{ link_to_route('portfolios.show', 'Preview', array($project->id), array('class' => 'btn btn-success')) }}</p>
+                    <p>{{ link_to_route('portfolios.edit', 'Edit', array($project->id), array('class' => 'btn btn-info')) }}</p>
+                    <p>
                         {{ Form::open(array('method' => 'DELETE', 'route' => array('portfolios.destroy', $project->id))) }}
                         {{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}
                         {{ Form::close() }}
+                    </p>
+                </div>
+                <div class="col-sm-12 col-md-4 nopadding"><img class="img-responsive" src="{{ $project->image }}"></div>
+                </div>
 
-                    </td>
-
-                </tr>
                 @endforeach
-            </tbody>
-        </table>
+<!--             </tbody>
+        </table> -->
     </div>
     @else
-    <div class="alert alsert-info col-md-4" style="margin-top: 15px">You currently have no posts</div>
+    <div class="alert alert-info col-md-8" style="margin-top: 15px">You currently have no posts</div>
     @endif
 <div class="col-md-4">
     <div class="well">

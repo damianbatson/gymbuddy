@@ -34,6 +34,7 @@ Route::group(array('before' => 'auth.basic'), function(){
 	Route::get('admin', 'AdminController@index');
 	Route::get('logout', 'AuthController@logout');
 	Route::resource('portfolios', 'PortfoliosController');
+	Route::resource('projects', 'ProjectsController');
 });
 
 // =============================================

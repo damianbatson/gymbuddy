@@ -17,6 +17,15 @@ class ProjectsController extends AdminController {
         return View::make('projects.index')->with('projects', $projects);
         // return View::make('portfolios/index', compact('laravelprojects'));
 	}
+	    /**
+     * Show the form for creating a new resource.
+     *
+     * @return Response
+     */
+    public function create()
+    {
+        return View::make('projects.create');
+    }
 
 	/**
 	 * Store a newly created resource in storage.

@@ -9,10 +9,7 @@ class PortfoliosController extends AdminController {
      */
     public function index()
     {
-        $projects = Projects::whereHas('user', function($query)
-        {
-            $query->where( 'user_id', '=', Auth::user()->id );
-        })->get();
+        $projects = Projects::where( 'user_id', '=', Auth::user()->id )->get();
 
         return View::make('portfolios.index')->with('projects', $projects);
         // return View::make('portfolios/index', compact('laravelprojects'));

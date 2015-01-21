@@ -7,7 +7,7 @@
         <div class="col-lg-12">
             <!-- <div class="col-md-4"> -->
                 <!-- <a href="http://laravel.com" title="Laravel PHP Framework"></a> -->
-                <h2>Portfolio</h2>
+                <h2>Projects</h2>
 
                 @foreach ($projects as $project)
                 	<div class="col-md-6">
@@ -17,6 +17,7 @@
                     
                     <p>{{ $project->description }}</p>
                     <p>{{ HTML::link('projects/'.$project->id, 'link to project') }}</p>
+                    <p>{{ HTML::linkRoute('projects.show', 'Preview', array($project->id), array('class' => 'btn btn-success')) }}</p>
                     </div>
                     <div class="col-md-4"><img class="img-responsive" src="{{ $project->image }}"></div>
                     </div>
