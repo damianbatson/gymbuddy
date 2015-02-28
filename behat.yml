@@ -1,0 +1,12 @@
+default:
+autoload:
+'': %paths.base%/app/tests/acceptance/bootstrap
+suites:
+general:
+paths: [%paths.base%/app/tests/acceptance/general]
+extensions:
+Laracasts\Behat\ServiceContainer\BehatExtension:
+Behat\MinkExtension\ServiceContainer\MinkExtension:
+base_url: 'http://workbench.app'
+goutte: ~
+selenium2: ~

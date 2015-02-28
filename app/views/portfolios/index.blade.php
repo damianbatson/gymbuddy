@@ -9,21 +9,8 @@
 
     <div class="col-md-8">
     
-<!--         <table class="table table-bordered table-striped">
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>username</th>
-                    <th>Description</th>
-                    <th>Date Created</th>
-                    <th>Preview</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                </tr>
-            </thead>
-            <tbody> -->
                 @foreach($projects as $project)
-                <!-- <tr> -->
+
                 <div class="col-sm-12 col-md-12 col-lg-6 nopadding">
                 <div class="col-sm-12 col-md-8 nopadding">
                     <h3>{{ $project->name }}</h3>
@@ -42,8 +29,7 @@
                 </div>
 
                 @endforeach
-<!--             </tbody>
-        </table> -->
+
     </div>
     @else
     <div class="alert alert-info col-md-8" style="margin-top: 15px">You currently have no posts</div>
