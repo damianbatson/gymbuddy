@@ -10,3 +10,4 @@ Behat\MinkExtension\ServiceContainer\MinkExtension:
 base_url: 'http://workbench.app'
 goutte: ~
 selenium2: ~
+laravel: ~

@@ -13,6 +13,7 @@
 		"behat/behat": "~3.0@dev",
 		"behat/mink": "~1.6@dev",
 		"behat/mink-extension": "~2.0@dev",
+		"behat/mink-browserkit-driver": "~1.2",
 		"laracasts/behat-laravel-extension": "dev-master"
 	},
 	"autoload": {

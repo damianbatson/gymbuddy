@@ -7,6 +7,6 @@ Feature: Laravel Behat Extension
   Scenario: Dummy Example
     Given I am on the homepage
     When I follow "Login"
-    Then the url should match "/login"
-    When I click "Submit"
-    Then the url should match "/admin"
+    Then the url should match "auth/login"
+    When I click "Login"
+    Then the url should match "auth/admin"
