@@ -12,12 +12,12 @@ var myApp = angular.module('myApp', ['projectsService', 'mainCtrl', 'ngRoute'])
       
    // }])
 
-   // configure views; note the authRequired parameter for authenticated pages
-   // .config(['$routeProvider', function($routeProvider) {
-   //    $routeProvider.when('/projects', {
-   //       templateUrl: 'partials/home.html',
-   //       controller: 'HomeCtrl'
-   //    });
+   configure views; note the authRequired parameter for authenticated pages
+   .config(['$routeProvider', function($routeProvider) {
+      $routeProvider.when('/projects', {
+         templateUrl: 'partials/home.html',
+         controller: 'HomeCtrl'
+      });
 
    //    $routeProvider.when('/chat', {
    //       templateUrl: 'partials/chat.html',
